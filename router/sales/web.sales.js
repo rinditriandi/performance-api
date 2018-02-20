@@ -1,4 +1,3 @@
-
 // init dependencies
 var express = require('express');
 var sql = require('mssql');
@@ -45,7 +44,7 @@ router.get('/listitem', function(req, res) {
     core.AddWithParameter(table1, "PageSize", "10"); 
 
     //execute query
-    return core.ExecuteQueryWithParameter(req, res, 'usp_SM_Position_List', config, table1);
+    return core.ExecuteQueryWithParameter1(req, res, 'USP_CMD_M_KPI_List', config, table1);
 });
 
 // -----------------------------------------------------------------------------
@@ -97,6 +96,8 @@ router.get('/loadsales3', function(req, res) {
 
 // ================================================================== POST ROUTER ================================================================== //
 
+// { "FormID": 1, "Name": 'Simon' }
+// { FormID: 1, Name: 'Simon' }
 
 router.post('/submitSales', function(req, res) {
     // define and prepare table parameter
