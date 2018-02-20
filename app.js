@@ -31,18 +31,18 @@ app.use(function (req, res, next) {
 // --------------------------------------------------------------- WEB --------------------------------------------------------------- //
 
 // define all web router
-var websales = require('./router/sales/web.sales');
+let websales = require('./router/sales/web.sales');
 //var product = require('./router/product/web.product.js');
 //var salesteam = require('./router/salesteam/web.sales-team.js');
 
-var webkpi = require('./router/master/web.kpi');
+let webkpi = require('./router/master/web.kpi');
+let webuom = require('./router/master/web.uom');
 
 // implement all web router
 app.use('/web/sales', websales);
-//app.use('/product', product);
-//app.use('/sales-team', salesteam);
 
 app.use('/web/kpi', webkpi);
+app.use('/web/uom', webuom);
 
 // --------------------------------------------------------------- MOBILE ------------------------------------------------------------ //
 
